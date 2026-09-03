@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Kế & Lập Trình Website Chuyên Nghiệp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased">
+
+    <!-- Thanh Điều Hướng (Header) -->
+    <header class="fixed top-0 left-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold text-indigo-400">DevStudio<span class="text-white">.vn</span></a>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-slate-300">
+                <a href="#services" class="hover:text-indigo-400 transition">Dịch Vụ</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Dự Án</a>
+                <a href="#process" class="hover:text-indigo-400 transition">Quy Trình</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">Liên Hệ</a>
+            </nav>
+            <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Báo Giá Ngay</a>
+        </div>
+    </header>
+
+    <!-- Trang Mở Đầu (Hero Section) -->
+    <section class="pt-32 pb-20 px-4 text-center max-w-4xl mx-auto">
+        <span class="text-xs font-semibold uppercase tracking-widest text-indigo-400 bg-indigo-950 border border-indigo-800 px-3 py-1 rounded-full">Sẵn sàng nhận dự án</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-6 leading-tight">
+            Nâng Tầm Thương Hiệu Với <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Website Đẳng Cấp</span>
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl mt-6 max-w-2xl mx-auto">
+            Chuyên thiết kế Landing Page, Web Doanh nghiệp tối ưu tốc độ tải trang, chuẩn SEO và tương thích mượt mà trên mọi thiết bị.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg shadow-indigo-600/30">Liên Hệ Tư Vấn</a>
+            <a href="#projects" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-xl border border-slate-700 transition">Xem Dự Án Mẫu</a>
+        </div>
+    </section>
+
+    <!-- Dịch Vụ -->
+    <section id="services" class="py-16 bg-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Dịch Vụ Cung Cấp</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <div class="w-12 h-12 bg-indigo-600/20 text-indigo-400 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Landing Page Bán Hàng</h3>
+                    <p class="text-slate-400 text-sm">Giao diện bắt mắt, tối ưu tỷ lệ chuyển đổi đơn hàng, tích hợp form đăng ký & nút Zalo tiện lợi.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <div class="w-12 h-12 bg-cyan-600/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-xl mb-4">💼</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Web Doanh Nghiệp</h3>
+                    <p class="text-slate-400 text-sm">Xây dựng uy tín với giao diện chuẩn doanh nghiệp, giới thiệu dịch vụ và sản phẩm rõ ràng.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <div class="w-12 h-12 bg-emerald-600/20 text-emerald-400 rounded-xl flex items-center justify-center font-bold text-xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Tối Ưu & Tăng Tốc Web</h3>
+                    <p class="text-slate-400 text-sm">Tăng điểm Google PageSpeed (90+), sửa lỗi giao diện và tối ưu trải nghiệm người dùng (UX/UI).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dự Án Mẫu -->
+    <section id="projects" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-white mb-4">Dự Án Đã Thực Hiện</h2>
+            <p class="text-slate-400 text-center mb-12 max-w-xl mx-auto">Trải nghiệm trực tiếp các sản phẩm web thực tế đã được lập trình hoàn chỉnh.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 group">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center text-slate-400 font-semibold">
+                        [Hình Ảnh Mẫu Dự Án 1]
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs bg-indigo-950 text-indigo-400 border border-indigo-800 px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                            <span class="text-xs bg-indigo-950 text-indigo-400 border border-indigo-800 px-2.5 py-0.5 rounded-full">Tailwind</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Website Giới Thiệu Bất Động Sản</h3>
+                        <p class="text-slate-400 text-sm mb-4">Landing Page tối ưu tốc độ tải dưới 1 giây, tích hợp form tư vấn nhận thông tin khách hàng.</p>
+                        <a href="#" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium text-sm">Xem Demo Trực Tiếp →</a>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 group">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center text-slate-400 font-semibold">
+                        [Hình Ảnh Mẫu Dự Án 2]
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs bg-cyan-950 text-cyan-400 border border-cyan-800 px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="text-xs bg-cyan-950 text-cyan-400 border border-cyan-800 px-2.5 py-0.5 rounded-full">Responsive</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Menu Điện Tử Cho Quán Cafe</h3>
+                        <p class="text-slate-400 text-sm mb-4">Giao diện tối ưu cho di động, hỗ trợ thực đơn tương tác và đặt bàn trực tuyến đơn giản.</p>
+                        <a href="#" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium text-sm">Xem Demo Trực Tiếp →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quy Trình Làm Việc -->
+    <section id="process" class="py-16 bg-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Quy Trình Làm Việc</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-5 bg-slate-800 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 font-black text-2xl mb-2">01</div>
+                    <h4 class="font-bold text-white mb-1">Tư Vấn & Báo Giá</h4>
+                    <p class="text-xs text-slate-400">Tiếp nhận yêu cầu, chốt tính năng và báo giá minh bạch.</p>
+                </div>
+                <div class="p-5 bg-slate-800 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 font-black text-2xl mb-2">02</div>
+                    <h4 class="font-bold text-white mb-1">Lên Thiết Kế Mẫu</h4>
+                    <p class="text-xs text-slate-400">Dựng giao diện Demo để bạn duyệt trước khi tiến hành code.</p>
+                </div>
+                <div class="p-5 bg-slate-800 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 font-black text-2xl mb-2">03</div>
+                    <h4 class="font-bold text-white mb-1">Lập Trình & Tối Ưu</h4>
+                    <p class="text-xs text-slate-400">Viết mã nguồn chuẩn, kiểm tra hiển thị di động và tốc độ.</p>
+                </div>
+                <div class="p-5 bg-slate-800 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 font-black text-2xl mb-2">04</div>
+                    <h4 class="font-bold text-white mb-1">Bàn Giao & Hỗ Trợ</h4>
+                    <p class="text-xs text-slate-400">Đưa trang web chạy chính thức và hỗ trợ kỹ thuật sau bàn giao.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên Hệ -->
+    <section id="contact" class="py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-slate-800 rounded-3xl p-8 md:p-12 border border-slate-700 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Bắt Đầu Dự Án Ngay</h2>
+                <p class="text-slate-400 mb-8 max-w-lg mx-auto">Liên hệ trực tiếp để trao đổi chi tiết về ý tưởng và nhận báo giá ưu đãi.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://zalo.me/0900000000" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition">
+                        💬 Nhắn Zalo Tư Vấn
+                    </a>
+                    <a href="tel:0900000000" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-xl border border-slate-600 transition">
+                        📞 Gọi Điện Trực Tiếp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>© 2026 DevStudio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
