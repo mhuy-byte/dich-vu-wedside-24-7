@@ -327,5 +327,156 @@
         </div>
     </footer>
 
+    <!-- ================= ARACHNE CLOCK WIDGET (GÓC DƯỚI BÊN TRÁI) ================= -->
+    <div id="arachne-widget">
+        <div class="arachne-title">ARACHNE · 24/7</div>
+        
+        <div class="arachne-clock">
+            <svg viewBox="0 0 300 300" class="arachne-svg">
+                <!-- Vòng tròn kim loại ngoài -->
+                <circle cx="150" cy="150" r="138" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.6"/>
+                <circle cx="150" cy="150" r="132" stroke="#d4af37" stroke-width="1" stroke-dasharray="2 6" fill="none" opacity="0.4"/>
+
+                <!-- Số đồng hồ -->
+                <g class="arachne-numbers" fill="#e2c068" font-family="'Times New Roman', serif" font-size="22" text-anchor="middle" dominant-baseline="central">
+                    <text x="150" y="32">12</text>
+                    <text x="210" y="48">1</text>
+                    <text x="252" y="90">2</text>
+                    <text x="268" y="150">3</text>
+                    <text x="252" y="210">4</text>
+                    <text x="210" y="252">5</text>
+                    <text x="150" y="268">6</text>
+                    <text x="90" y="252">7</text>
+                    <text x="48" y="210">8</text>
+                    <text x="32" y="150">9</text>
+                    <text x="48" y="90">10</text>
+                    <text x="90" y="48">11</text>
+                </g>
+
+                <!-- Tâm nhện Vàng -->
+                <g class="arachne-spider" stroke="#ffd700" fill="none" stroke-width="1.5">
+                    <ellipse cx="150" cy="150" rx="8" ry="12" fill="#ffd700" />
+                    <circle cx="150" cy="134" r="5" fill="#ffd700" />
+                    <path d="M 145 145 Q 120 120 100 130" />
+                    <path d="M 155 145 Q 180 120 200 130" />
+                    <path d="M 143 150 Q 110 140 90 155" />
+                    <path d="M 157 150 Q 190 140 210 155" />
+                    <path d="M 143 155 Q 115 170 95 180" />
+                    <path d="M 157 155 Q 185 170 205 180" />
+                    <path d="M 145 160 Q 125 190 110 205" />
+                    <path d="M 155 160 Q 175 190 190 205" />
+                </g>
+
+                <!-- Kim đồng hồ -->
+                <g class="arachne-hands">
+                    <line id="arachne-hour" x1="150" y1="150" x2="150" y2="80" stroke="#f3e5ab" stroke-width="4" stroke-linecap="round"/>
+                    <line id="arachne-min" x1="150" y1="150" x2="150" y2="55" stroke="#e2c068" stroke-width="2.5" stroke-linecap="round"/>
+                    <line id="arachne-sec" x1="150" y1="165" x2="150" y2="40" stroke="#ff4d4d" stroke-width="1.5" stroke-linecap="round"/>
+                </g>
+                <circle cx="150" cy="150" r="5" fill="#ffffff" />
+            </svg>
+        </div>
+
+        <div id="arachne-digital">00:00:00</div>
+        <div class="arachne-sub">SYSTEM ACTIVE</div>
+    </div>
+
+    <style>
+        #arachne-widget {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 150px;
+            background: rgba(13, 15, 18, 0.92);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 16px;
+            padding: 12px 10px 8px 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            user-select: none;
+            transition: transform 0.3s ease;
+        }
+
+        #arachne-widget:hover {
+            transform: scale(1.05);
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+
+        .arachne-title {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: #d4af37;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .arachne-clock {
+            width: 100%;
+            height: auto;
+        }
+
+        .arachne-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.2));
+        }
+
+        #arachne-hour, #arachne-min, #arachne-sec {
+            transform-origin: 150px 150px;
+        }
+
+        #arachne-digital {
+            color: #e2c068;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 6px;
+        }
+
+        .arachne-sub {
+            font-size: 7px;
+            color: #888;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+    </style>
+
+    <script>
+        function updateArachneClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const ms = now.getMilliseconds();
+
+            const secDeg = (seconds + ms / 1000) * 6;
+            const minDeg = (minutes + seconds / 60) * 6;
+            const hourDeg = ((hours % 12) + minutes / 60) * 30;
+
+            const secHand = document.getElementById('arachne-sec');
+            const minHand = document.getElementById('arachne-min');
+            const hourHand = document.getElementById('arachne-hour');
+            const digitalReadout = document.getElementById('arachne-digital');
+
+            if (secHand) secHand.style.transform = `rotate(${secDeg}deg)`;
+            if (minHand) minHand.style.transform = `rotate(${minDeg}deg)`;
+            if (hourHand) hourHand.style.transform = `rotate(${hourDeg}deg)`;
+
+            if (digitalReadout) {
+                const hStr = String(hours).padStart(2, '0');
+                const mStr = String(minutes).padStart(2, '0');
+                const sStr = String(seconds).padStart(2, '0');
+                digitalReadout.textContent = `${hStr}:${mStr}:${sStr}`;
+            }
+
+            requestAnimationFrame(updateArachneClock);
+        }
+        requestAnimationFrame(updateArachneClock);
+    </script>
+    <!-- ================= END ARACHNE CLOCK ================= -->
+
 </body>
 </html>
